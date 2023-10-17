@@ -1,6 +1,7 @@
 import interfaces.Teachable;
 
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.HashMap;
 
 public class University {
@@ -12,11 +13,19 @@ public class University {
     private HashMap<Teacher, ArrayList<Course>> teacherCourseMap;
 
 
-    public void getName(String name){
+    public University(String name){
         this.name = name;
+        this.students = new ArrayList<>();
+        this.teachers = new ArrayList<>();
+        this.courses = new ArrayList<>();
+        this.teacherCourseMap = new HashMap<>();
     }
 
-    public String setName(String name){
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String name){
         this.name = name;
     }
 
@@ -42,7 +51,18 @@ public class University {
         return teachers;
     }
 
+    public HashMap<Teacher, ArrayList<Course>> getTeacherCourseMap() {
+        return teacherCourseMap;
+    }
 
+    public void addTeacherAndCourse(Teacher teacher, Course course) {
+        if (teachers.contains(teacher) && courses.contains(course)) {
+            if (!teacherCourseMap.containsKey(teacher)) {
+                teacherCourseMap.put(teacher, new ArrayList<>());
+            }
+            teacherCourseMap.get(teacher).add(course);
+        }
+    }
 
 
 }
