@@ -31,6 +31,8 @@ public class CourseTest {
 
     @Test
     void canSetCourseName(){
+        course.setCourseName("Chemistry 101");
+        assertThat(course.getCourseName()).isEqualTo("Chemistry 101");
 
     }
 
