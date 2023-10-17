@@ -1,3 +1,5 @@
+import interfaces.Teachable;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 

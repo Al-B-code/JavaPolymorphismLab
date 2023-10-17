@@ -35,7 +35,7 @@ public class CourseTest {
     }
 
     @Test
-    void canAddRegisteredPerson(){
+    void canAddRegisteredPeople(){
         course.addRegisteredPeople(teacher);
         assertThat(true).isEqualTo(course.registeredPeople.contains(teacher));
         course.addRegisteredPeople(student);
@@ -47,5 +47,26 @@ public class CourseTest {
         course.addRegisteredPeople(teacher);
         System.out.println(course.getRegisteredPeople());
         assertThat(course.getRegisteredPeople().size()).isEqualTo(1);
+    }
+
+    @Test
+    void canAddStudentFromRegisteredList(){
+        course.addRegisteredPeople(teacher);
+        assertThat(true).isEqualTo(course.registeredPeople.contains(teacher));
+        course.addRegisteredPeople(student);
+        assertThat(true).isEqualTo(course.registeredPeople.contains(student));
+        course.addStudentFromRegisteredList();
+        assertThat(course.studentList.size()).isEqualTo(1);
+
+    }
+
+    @Test
+    void canAddTeacherFromRegisteredList(){
+        course.addRegisteredPeople(teacher);
+        assertThat(true).isEqualTo(course.registeredPeople.contains(teacher));
+        course.addRegisteredPeople(student);
+        assertThat(true).isEqualTo(course.registeredPeople.contains(student));
+        course.addTeacherFromRegisteredList();
+        assertThat(course.teacherList.size()).isEqualTo(1);
     }
 }
