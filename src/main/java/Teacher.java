@@ -1,4 +1,6 @@
-public class Teacher extends Person{
+import interfaces.Teachable;
+
+public class Teacher extends Person implements Teachable {
 
     int teacherId;
 
@@ -13,5 +15,10 @@ public class Teacher extends Person{
 
     public void setTeacherId(int teacherId) {
         this.teacherId = teacherId;
+    }
+
+    @Override
+    public String teach() {
+        return "I can teach";
     }
 }
