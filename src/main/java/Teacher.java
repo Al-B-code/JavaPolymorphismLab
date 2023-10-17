@@ -21,4 +21,8 @@ public class Teacher extends Person implements Teachable {
     public String teach() {
         return "I can teach";
     }
+
+    public int getId(){
+        return teacherId;
+    }
 }

@@ -21,4 +21,8 @@ public class Student extends Person implements Studyable {
     public String study() {
         return "I can study";
     }
+
+    public int getId(){
+        return studentId;
+    }
 }

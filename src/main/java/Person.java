@@ -1,4 +1,4 @@
-public class Person { // Will need to turn this into an abstract class at one point.
+public abstract class Person { // Will need to turn this into an abstract class at one point.
 
     protected String name;
     protected int age;
@@ -34,5 +34,8 @@ public class Person { // Will need to turn this into an abstract class at one po
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public abstract int getId();
+
 
 }

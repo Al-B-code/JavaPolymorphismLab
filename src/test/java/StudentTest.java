@@ -33,9 +33,10 @@ public class StudentTest {
         assertThat(student.getStudentId()).isEqualTo(123456789);
     }
     @Test
-    public void canSetStudentId(){
+    public void canSetStudentId() {
         student.setStudentId(987654321);
-        assertThat(student.getStudentId()).isEqualTo(987654321);
+        assertThat(student.getId()).isEqualTo(987654321);
     }
+
 
 }
